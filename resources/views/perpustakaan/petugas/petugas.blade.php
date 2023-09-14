@@ -32,19 +32,16 @@
                         <!-- /.card-header -->
 
                         <!-- form start -->
-                        <form>
+                        <form action="{{ route('petugas.store')}}" method="POST">
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="id_petugas">ID Petugas</label>
-                                    <input class="form-control" type="text" name="id_petugas" id="id_petugas" placeholder="Masukan ID">
-                                </div>
-                                <div class="form-group">
                                     <label for="nama_petugas">Nama Petugas</label>
-                                    <input class="form-control" type="text" name="nama_petugas" id="nama_petugas" placeholder="Masukan nama petugas">
+                                    <input name="nama" class="form-control" type="text" name="nama_petugas" id="nama_petugas" placeholder="Masukan nama petugas">
                                 </div>
                                 <div class="form-group">
                                     <label for="jabatan">Jabatan</label>
-                                    <input class="form-control" type="text" name="jabatan" id="jabatan" placeholder="Masukan jabatan">
+                                    <input name="jabatan" class="form-control" type="text" name="jabatan" id="jabatan" placeholder="Masukan jabatan">
                                 </div>
                                 <div class="form-group">
                                     <label>No. Telepon</label>
@@ -52,7 +49,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
-                                        <input type="number" class="form-control"
+                                        <input name="no" type="number" class="form-control"
                                             data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka">
                                     </div>
                                 </div>

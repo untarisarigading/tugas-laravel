@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="({{ route('dashboard') }})" class="brand-link">
+  <a href="" class="brand-link">
       <img src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="Logo"
           class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Perpustakaan</span>
@@ -28,7 +28,7 @@
               <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
               <li class="nav-item">
-                  <a href="{{ route('dashboard') }}" class="nav-link">
+                  <a href="" class="nav-link">
                       <i class="nav-icon fas fa-tachometer-alt"></i>
                       <p>
                           Dashboard
@@ -36,7 +36,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="{{ route('get_anggota') }}" class="nav-link">
+                  <a href="" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                           Data Anggota
@@ -44,7 +44,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="{{ route('get_buku') }}" class="nav-link">
+                  <a href="" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                           Data Buku
@@ -52,7 +52,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="{{ route('get_petugas') }}" class="nav-link">
+                  <a href="" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                           Data Petugas
