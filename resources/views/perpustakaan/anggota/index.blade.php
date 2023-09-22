@@ -28,6 +28,11 @@
               <td>{{ $item->jurusan_anggota}}</td>
               <td>{{ $item->no_telp_anggota}}</td>
               <td>{{ $item->alamat_anggota}}</td>
+              <td>
+                 <a href="{{ route('anggota.show', $item->id) }}" class="btn-sm btn-info">Show</a>
+                 <a href=" {{ route('anggota.edit', $item->id) }} " class="btn-sm btn-warning">Edit</a>
+                 <a href=" {{ route('anggota.delete', $item->id) }} " class="btn-sm btn-danger">Delete</a>
+              </td>
             </tr>
             @empty
                 <tr>

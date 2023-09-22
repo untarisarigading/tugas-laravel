@@ -28,6 +28,11 @@
               <td>{{ $item->penerbit_buku}}</td>
               <td>{{ $item->tahun_penerbit}}</td>
               <td>{{ $item->stok}}</td>
+              <td>
+                 <a href="  " class="btn-sm btn-info">Show</a>
+                 <a href="  " class="btn-sm btn-warning">Edit</a>
+                 <a href="  " class="btn-sm btn-danger">Delete</a>
+              </td>
             </tr>
             @empty
                 <tr>

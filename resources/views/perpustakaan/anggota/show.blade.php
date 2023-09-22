@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">ANGGOTA</h1>
+                    <h1 class="m-0">DATA ANGGOTA</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -36,42 +36,38 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="id">ID Anggota</label>
-                                    <input name="id" type="text" class="form-control" id="id" placeholder="Masukkan ID">
+                                    <input value="{{ $anggota[0]->id }}" name="id" type="text" class="form-control" id="id" placeholder="Masukkan ID" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="kode_anggota">Kode Anggota</label>
-                                    <input name="kode" type="text" class="form-control" id="kode_anggota"
-                                        placeholder="Masukan kode">
+                                    <input value="{{ $anggota[0]->kode_anggota }}" name="kode" type="text" class="form-control" id="kode_anggota"
+                                        placeholder="Masukan kode" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input name="nama" type="text" class="form-control" id="nama"
-                                        placeholder="Masukan nama">
+                                    <input value="{{ $anggota[0]->nama_anggota }}" name="nama" type="text" class="form-control" id="nama"
+                                        placeholder="Masukan nama" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="jk">Jenis Kelamin</label>
+                                    @if ($anggota[0]->jk_anggota == 'L')
                                     <div class="custom-control custom-radio">
-                                        <input value="L" class="custom-control-input" type="radio" id="l"
+                                        <input checked value="" value="L" class="custom-control-input" type="radio" id="l"
                                             name="jk">
                                         <label for="l" class="custom-control-label">Laki-laki</label>
                                     </div>
+                                    @else
                                     <div class="custom-control custom-radio">
-                                        <input value="P" class="custom-control-input" type="radio" id="p"
+                                        <input checked value="P" class="custom-control-input" type="radio" id="p"
                                             name="jk">
                                         <label for="p" class="custom-control-label">Perempuan</label>
                                     </div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
                                     <label>Jurusan</label>
-                                    <select name="jurusan" class="custom-select">
-                                        <option selected disabled>Pilih Jurusan</option>
-                                        <option value="RPL" >RPL</option>
-                                        <option value="DPIB" >DPIB</option>
-                                        <option value="TP" >TP</option>
-                                        <option value="TFLM" >TFLM</option>
-                                        <option value="TEI" >TEI</option>
-                                        <option value="TITL" >TITL</option>
-                                        <option value="TKJ" >TKJ</option>
+                                    <select name="jurusan" class="custom-select" disabled>
+                                        <option selected>{{ $anggota[0]->jurusan_anggota }}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -80,17 +76,14 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                         </div>
-                                        <input name="no_telp" type="number" class="form-control"
+                                        <input disabled value="{{ $anggota[0]->no_telp_anggota }}" name="no_telp" type="number" class="form-control"
                                             data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Masukan angka">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                         <label>Alamat</label>
-                                        <textarea name="alamat" class="form-control" rows="3" placeholder="Masukan alamat"></textarea>
+                                        <textarea name="alamat" class="form-control" rows="3" placeholder="Masukan alamat" disabled>{{ $anggota[0]->alamat_anggota }}</textarea>
                                     </div>
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                             <!-- /.content -->
                         </form>

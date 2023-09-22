@@ -67,9 +67,12 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(string $id) 
     {
         //
+        // SELECT * FROM anggota where id = $id 
+        $anggota = DB::table('anggota')->where('id', $id)->get(); 
+        return view('perpustakaan.anggota.show', compact('anggota'));  
     }
 
     /**
@@ -81,18 +84,35 @@ class AnggotaController extends Controller
     public function edit($id)
     {
         //
+         $anggota = DB::table('anggota')->where('id', $id)->get();
+        return view('perpustakaan.anggota.edit', compact('anggota')); 
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'kode'=>'required',
+            'nama'=>'required',
+            'jk'=>'required',
+            'jurusan'=>'required',
+            'no_telp_anggota'=>'required',
+            'alamat'=>'required',
+        ]);
+
+        $query = DB::table('anggota')->where('id', $id)->update([
+            //'field yang ada di table' => $request['name yang dikirim dari form']
+            'kode_anggota'=>$request['kode'],
+            'nama_anggota'=>$request['nama'],
+            'jk_anggota'=>$request['jk'],
+            'jurusan_anggota'=>$request['jurusan'],
+            'no_telp_anggota'=>$request['no_telp_anggota'],
+            'alamat_anggota'=>$request['alamat'],
+        ]);
+
+        return redirect()->route('perpustakaan.anggota.index');
     }
 
     /**
@@ -104,5 +124,7 @@ class AnggotaController extends Controller
     public function destroy($id)
     {
         //
+         $query = DB::table('anggota')->where('id', $id)->delete();
+        return redirect()->route('perpustakaan.anggota.index');
     }
 }
